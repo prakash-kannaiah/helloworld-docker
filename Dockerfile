@@ -10,7 +10,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies (if any)
-RUN pip3 install --no-cache-dir -r requirements.txt || true
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy source code
 COPY app/ /app
