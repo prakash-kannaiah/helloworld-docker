@@ -1,8 +1,12 @@
 # app/app.py
 
-import time
+from flask import Flask
 
-while True:
-    print("Hello from Docker!")
-    time.sleep(5)  # print every 5 seconds
+app = Flask(__name__)
 
+@app.route("/")
+def hello():
+    return "<h1>Hello from Docker!</h1>"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
